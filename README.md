@@ -82,7 +82,7 @@ The Music Booking API enables users to:
 # 2. Users
 ### Get User Details
 **Protected Endpoint:** `GET /api/users/me`  
-**Description:** Get current user details 
+**Description:** Get current user details  
 **Headers:** Authorization: Bearer '<token>'
 
 **Response Body:**
@@ -97,10 +97,11 @@ The Music Booking API enables users to:
 }
 ```
 ### Update User Details
-**Endpoint:** `PATCH /api/users/me` 
-**Headers:** Authorization: Bearer <token>
-**Description:** Update the current user details
-**Request Body(all optional)**
+### Register User
+**Endpoint:** `PATCH /api/users/me`  
+**Headers:** Authorization: Bearer '<token>'  
+**Description** Update the current user details  
+**Request Body(all optional)** 
 ```json
    {
         "name":string,
