@@ -4,7 +4,7 @@
 
 The Music Booking API enables users to:
 - Browse artists and their profiles
-- Book live performances 
+- Book artists for events
 - Create and manage event listings
 - Handle authentication and authorization
 - Perform CRUD operations on all resources
@@ -28,23 +28,6 @@ The Music Booking API enables users to:
    ```bash
    npm run install
 4. Create a .env file. Add your MONGO_URI and JWT_SECRET to it
-
-# 1. Introduction 
-
-The Music Booking API enables users to browse artists, book performances, and manage event listings. The API supports authentication, authorization and CRUD operations.
-
-## To Use On Local Machine
-i. Clone/Download the repository
-ii. Install Node.js on the machine
-iii. Run npm install on command prompt in the project directory
-iv. Run npm run dev to spin up the server. This enables you to connect with the API with it base URL
-v. Create a .env file, add your MONGO_URI and JWT_SECRET for your database
-
-Base URL: 
-http://localhost:5000
-
-Authentication:
-The API uses JWT for authentication. Include the Authorization: Bearer <token> header in your requests. Especially for protected endpoints
 
 # 2. Authentication
 ### Register User
@@ -75,7 +58,8 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
 ```json
     {
         "email":string,
-        "password":string "greater than or equal 5 characters"
+        "password":string
+         // "password should not be greater than 5 characters"
     }
 ```
 **Response Body(no error):**
@@ -97,9 +81,9 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
 
 # 2. Users
 ### Get User Details
-**Protected Endpoint:** `GET /api/users/me` 
-**Headers:** Authorization: Bearer <token>
+**Protected Endpoint:** `GET /api/users/me`  
 **Description:** Get current user details 
+**Headers:** Authorization: Bearer '<token>'
 
 **Response Body:**
 ```json
@@ -120,7 +104,7 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
 ```json
    {
         "name":string,
-        "role":"artist" | "organizer" | "user",
+        "role":"artist | organizer | user",
     }
 ```
 **Response Body**
