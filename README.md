@@ -15,13 +15,29 @@ http://localhost:5000
 Authentication:
 The API uses JWT for authentication. Include the Authorization: Bearer <token> header in your requests. Especially for protected endpoints
 
+
+
 # 2. Authentication
+### Register User
+**Endpoint:** `POST /api/auth/register`  
+**Description:** Create a new user account  
+
+**Request Body:**
+```json
+{
+    "name": "string",
+    "email": "string",
+    "password": "string",
+    "role": "artist | organizer | user"
+}
+```
+
 <p>Register User</p>
 <ul>
     <li>Endpoint POST /api/auth/register</li>
     <li>Create a new user account</li>
     **Request Body:**
-```json
+
 {
     "name": "string",
     "email": "string",
@@ -30,7 +46,6 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
 }
     </p></li>
     **Response Body:**
-    ```json
     {
         "message":string, 
         "success":boolean
