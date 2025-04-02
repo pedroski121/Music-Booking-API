@@ -200,12 +200,13 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
 
 
 # 5. Events
-<p>Get Events</p>
-<ul>
-    <li>Endpoint GET /api/events</li>
-    <li>Query Params: limit, page</li>
-    <li>Fetch a limited amount of events</li>
-    <li>Response Body<p>
+### Get Events
+**Endpoint:** `GET /api/events`  
+**Query Params:** `limit, page`  
+**Description:** Fetch a limited amount of events
+
+**Reponse Body:**
+```json
    {
         "userId": string,
         "name": string,
@@ -214,14 +215,14 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
         "venueId": string,
         "id": string
     }[]
-    </p></li>
-</ul>
+```
 
-<p>Get Event Details</p>
-<ul>
-    <li>Endpoint GET /api/events/:id</li>
-    <li>Fetch a event details</li>
-    <li>Response Body<p>
+### Get Event Details
+**Endpoint:** `GET /api/events/:id`  
+**Description:** Fetch event details
+
+**Reponse Body:**
+```json
    {
         "userId": string,
         "name": string,
@@ -230,15 +231,15 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
         "venueId": string,
         "id": string
     }
-    </p></li>
-</ul>
+```
 
-<p>Create Event</p>
-<ul>
-    <li>Endpoint POST /api/events</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Create a New Event</li>
-    <li>Request Body<p>
+### Create Event
+**Endpoint:** `POST /api/events`  
+**Headers:** Authorization: Bearer `<token>`  
+**Description:** Create a New Event
+
+**Request Body:**
+```json
         {   
             "venueId": string, (optional) 
             "name": string,
@@ -246,22 +247,23 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
             "eventDate": Date, (optional) YYYY-MM-DD(format)
             "eventTime": string, (optional) HH/MM(24 hour format)
             "duration": number, (optional)
-        },
-    </p></li>
-    <li>Response Body<p>
+        }
+```
+**Reponse Body:**
+```json
     {
         "message": string,
         "success": boolean
-    },
-    </p></li>
-</ul>
+    }
+```
 
-<p>Update Event Details</p>
-<ul>
-    <li>Endpoint PATCH /api/events/:id</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Update the Event Details</li>
-    <li>Request Body(all optional)<p>
+### Update Event Details
+**Endpoint:** `PATCH /api/events/:id`  
+**Headers:** Authorization: Bearer `<token>`  
+**Description:** Update the Event Details
+
+**Request Body(all optional):**
+```json
        {   
             "venueId": string,  
             "name": string,
@@ -269,53 +271,57 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
             "eventDate": Date, YYYY-MM-DD(format)
             "eventTime": string, HH/MM(24 hour format)
             "duration": number
-        },
-    </p></li>
-    <li>Response Body<p>
+        }
+```
+**Reponse Body:**
+```json
     {
-        "message":string, 
-        "success":boolean
+        "message": string,
+        "success": boolean
     }
-    </p></li>
-</ul>
+```
 
-<p>Delete Event </p>
-<ul>
-    <li>Endpoint DELETE /api/events/:id</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Delete Event</li>
-    <li>Response Body<p>
+### Delete Event
+**Endpoint:** `DELETE /api/events/:id`  
+**Headers:** Authorization: Bearer `<token>`  
+**Description:** Delete Event
+**Reponse Body:**
+```json
     {
-        "message":string, 
-        "success":boolean
+        "message": string,
+        "success": boolean
     }
-    </p></li>
-</ul>
+```
+
 
 # 6. Bookings
+### Get Bookings
+**Endpoint:** `GET /api/bookings`  
+**Query Params:** `limit, page`  
+**Description:** Fetch a limited amount of bookings
 
-<p>Get Bookings</p>
-<ul>
-    <li>Endpoint GET /api/bookings</li>
-    <li>Query Params: limit, page</li>
-    <li>Fetch a limited amount of events</li>
-    <li>Response Body<p>
+**Reponse Body:**
+```json
    {
+        "eventId": string,
+        "artistId": string,
         "userId": string,
-        "name": string,
-        "description": string,
         "status": string,
-        "venueId": string,
+        "performanceDate": Date, YYYY-MM-DD(format),
+        "performanceTime": string, HH/MM(24 hour format),
+        "performanceDuration": number,
+        "createdAt": string,
+        "updatedAt": string,
         "id": string
     }[]
-    </p></li>
-</ul>
+```
 
-<p>Get Booking Details</p>
-<ul>
-    <li>Endpoint GET /api/bookings/:id</li>
-    <li>Fetch Booking Details</li>
-    <li>Response Body<p>
+### Get  Booking Details
+**Endpoint:** `GET /api/bookings/:id`  
+**Description:** Fetch Booking Details
+
+**Response Body:**
+```json
      {
         "eventId": string,
         "artistId": string,
@@ -328,16 +334,15 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
         "updatedAt": string,
         "id": string
     }
-    </p></li>
-</ul>
+```
 
+### Create Booking
+**Endpoint:** `POST /api/bookings`  
+**Headers:** Authorization: Bearer `<token>`  
+**Description:** Create a New Booking
 
-<p>Create Booking</p>
-<ul>
-    <li>Endpoint POST /api/bookings</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Create a New Booking</li>
-    <li>Request Body<p>
+**Request Body:**
+```json
         {
             "eventId":string, 
             "artistId":string,
@@ -345,22 +350,22 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
             "performanceDuration":number, 
             "performanceTime":string, HH/MM(24 hour format)
         }
-    </p></li>
-    <li>Response Body<p>
+```
+**Reponse Body:**
+```json
     {
         "message": string,
         "success": boolean
-    },
-    </p></li>
-</ul>
+    }
+```
 
+### Update Booking Details
+**Endpoint:** `PATCH /api/events/:id`  
+**Headers:** Authorization: Bearer `<token>`  
+**Description:** Update the Booking Details
 
-<p>Update Booking Details</p>
-<ul>
-    <li>Endpoint PATCH /api/events/:id</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Update the Booking Details</li>
-    <li>Request Body(all optional)<p>
+**Request Body(all optional):**
+```json
       {
             "eventId":string, 
             "artistId":string,
@@ -368,15 +373,15 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
             "performanceDuration":number, 
             "performanceTime":string, HH/MM(24 hour format), 
             "status": "requested" | "confirmed" | "rejected" | "completed"
-        }  
-    </p></li>
-    <li>Response Body<p>
+        } 
+```
+**Reponse Body:**
+```json
     {
-        "message":string, 
-        "success":boolean
+        "message": string,
+        "success": boolean
     }
-    </p></li>
-</ul>
+```
 
 
 # 7. Venue
