@@ -22,11 +22,13 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
     <li>Create a new user account</li>
     **Request Body:**
     ```json
+    {
         "name":string,
         "email":string,
         "password":string,
         "role":"artist" | "organizer" | "user"
     }
+    ```
     </p></li>
     **Response Body:**
     ```json
