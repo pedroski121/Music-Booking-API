@@ -97,7 +97,6 @@ The Music Booking API enables users to:
 }
 ```
 ### Update User Details
-### Register User
 **Endpoint:** `PATCH /api/users/me`  
 **Headers:** Authorization: Bearer '<token>'  
 **Description** Update the current user details  
@@ -116,9 +115,9 @@ The Music Booking API enables users to:
     }
 ```
 ### Delete User Account
-**Endpoint:** `DELETE /api/users/me` 
-**Headers:** Authorization: Bearer <token>
-**Description:** Delete the current user account
+**Endpoint:** `DELETE /api/users/me`  
+**Headers:** Authorization: Bearer '<token>'  
+**Description** Delete the current user account  
 **Response Body**
 ```json
     {
