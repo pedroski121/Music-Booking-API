@@ -31,28 +31,13 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
     "role": "artist | organizer | user"
 }
 ```
-
-<p>Register User</p>
-<ul>
-    <li>Endpoint POST /api/auth/register</li>
-    <li>Create a new user account</li>
-    **Request Body:**
-
-{
-    "name": "string",
-    "email": "string",
-    "password": "string",
-    "role": "artist" | "organizer" | "user"
-}
-    </p></li>
-    **Response Body:**
+**Response Body:**
+```json
     {
         "message":string, 
         "success":boolean
     }
-    </p></li>
-</ul>
-
+```
 <p>Login User</p>
 <ul>
     <li>Endpoint POST /api/auth/login</li>
