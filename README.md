@@ -82,7 +82,7 @@ The Music Booking API enables users to:
 ### Get User Details
 **Protected Endpoint:** `GET /api/users/me`  
 **Description:** Get current user details  
-**Headers:** Authorization: Bearer '<token>'
+**Headers:** Authorization: Bearer `<token>`
 
 **Response Body:**
 ```json
@@ -97,7 +97,7 @@ The Music Booking API enables users to:
 ```
 ### Update User Details
 **Endpoint:** `PATCH /api/users/me`  
-**Headers:** Authorization: Bearer '<token>'  
+**Headers:** Authorization: Bearer `<token>`  
 **Description** Update the current user details  
 **Request Body(all optional)** 
 ```json
@@ -115,7 +115,7 @@ The Music Booking API enables users to:
 ```
 ### Delete User Account
 **Endpoint:** `DELETE /api/users/me`  
-**Headers:** Authorization: Bearer '<token>'  
+**Headers:** Authorization: Bearer `<token>`  
 **Description** Delete the current user account  
 **Response Body**
 ```json
@@ -167,9 +167,9 @@ The Music Booking API enables users to:
 
 ### Create Artist Profile
 **Endpoint:** `POST /api/artists`  
-**Headers:** Authorization: Bearer <token>  
-**Description:** Create a New Artist Profile
-**Genres:** Pop, Rock, Hip-Hop, R&B, Electronic, Jazz, Classical, Country, Reggae, Metal, Afrobeat, Other
+**Headers:** Authorization: Bearer `<token>`
+**Description:** Create a New Artist Profile  
+**Headers:** Pop, Rock, Hip-Hop, R&B, Electronic, Jazz, Classical, Country, Reggae, Metal, Afrobeat, Other  
 
 **Request Body:**
 ```json
@@ -190,7 +190,7 @@ The Music Booking API enables users to:
 
 ### Update Artist Profile
 **Endpoint:** `PATCH /api/artists`  
-**Headers:** Authorization: Bearer <token>  
+**Headers:** Authorization: Bearer `<token>`  
 **Description:** Update the current artist profile
 
 **Request Body(all optional):**
