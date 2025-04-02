@@ -1,0 +1,770 @@
+{
+	"info": {
+		"_postman_id": "449daf42-82b4-45e6-8910-27595d3686ea",
+		"name": "Music Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28386350"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\":\"user\",\r\n  \"email\":\"new@email.com\",\r\n  \"password\":\"usermail\",\r\n  \"role\":\"organizer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"new@email.com\", \r\n    \"password\":\"usermail\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZW1haWwxLmNvbSIsInVzZXJJZCI6IjY3ZWM4NWY5M2M2MTY5NTg2MGNjY2UwNCIsImlhdCI6MTc0MzU1NDA0NiwiZXhwIjoxNzQzNjQwNDQ2fQ.OphbwHxjbwtnOTHxGOmWT-q1cR2O0lERmTqHix_rl1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZW1haWwxLmNvbSIsInVzZXJJZCI6IjY3ZWM4NWY5M2M2MTY5NTg2MGNjY2UwNCIsImlhdCI6MTc0MzU1NDA0NiwiZXhwIjoxNzQzNjQwNDQ2fQ.OphbwHxjbwtnOTHxGOmWT-q1cR2O0lERmTqHix_rl1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user\",\r\n    \"role\": \"organizer\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZW1haWwxLmNvbSIsInVzZXJJZCI6IjY3ZWM3NzQ2MDE3MTQ5ODFkNWQxM2VhNiIsImlhdCI6MTc0MzU1Mzk4OSwiZXhwIjoxNzQzNjQwMzg5fQ.IbSx_zC1AuT9921xlocWJwswHwJncXMSe0Z5h_H359s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "Get Artists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/artists?limit=10&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Artist Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5ld0BlbWFpbC5jb20iLCJ1c2VySWQiOiI2N2VjOTc3ZDE4NmQyYjE3MjdjMzk5YzIiLCJpYXQiOjE3NDM1NTg1NTAsImV4cCI6MTc0MzY0NDk1MH0.qhiTCcLdiU0bxocp_jVSV92W7t5Yh6z5Y4KbvYdoniQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"stageName\": \"DEV LORD\",\r\n        \"genres\": [\"Afrobeats\"],\r\n        \"bio\": \"This is just the beginning\",\r\n        \"priceTag\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/artists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGVtYWlsLmNvbSIsInVzZXJJZCI6IjY3ZWIxMDZhOTI2ZDcyZDhhNDFmZjBjNyIsImlhdCI6MTc0MzQ2NTc4NywiZXhwIjoxNzQzNTUyMTg3fQ.PXEEXI850r0vmScP5BRDE0XZBYfFSWI9NyyfIJMZtw0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/artists/67ec8da5df10316cde1edafd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artists",
+								"67ec8da5df10316cde1edafd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Artist Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5ld0BlbWFpbC5jb20iLCJ1c2VySWQiOiI2N2VjOTc3ZDE4NmQyYjE3MjdjMzk5YzIiLCJpYXQiOjE3NDM1NTg1NTAsImV4cCI6MTc0MzY0NDk1MH0.qhiTCcLdiU0bxocp_jVSV92W7t5Yh6z5Y4KbvYdoniQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stageName\":\"Dev Lord\",\r\n    \"genres\":[\"Afrobeat\"],\r\n    \"socialLinks\":[\"instagram.com\"],\r\n    \"bio\":\"Changing the afrobeat game in the world\",\r\n    \"priceTag\":10000, \r\n    \"rating\":5.0\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/artists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artists"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Get Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/events/67ec12093ec361d2c0a20903",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"67ec12093ec361d2c0a20903"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwidXNlcklkIjoiNjdlYmU1MmRmNmU1YTk3MWMwNTMxYzU1IiwiaWF0IjoxNzQzNTEyODg1LCJleHAiOjE3NDM1OTkyODV9.9pgM5OrM13mlfRR5w87TATuUiKbSmJogZoFXLDjQ-WM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Get ready\", \r\n    \"description\":\"Get ready because it is about to get hot tonight\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwidXNlcklkIjoiNjdlYmU1MmRmNmU1YTk3MWMwNTMxYzU1IiwiaWF0IjoxNzQzNTEyODg1LCJleHAiOjE3NDM1OTkyODV9.9pgM5OrM13mlfRR5w87TATuUiKbSmJogZoFXLDjQ-WM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"published\", \r\n    \"venueId\": \"67ec0f883ec361d2c0a208ff\",  \r\n    \"name\": \"SHUTDOWN\",\r\n    \"description\": \"Gonna shut down mehn\",\r\n    \"eventDate\": \"2025-04-01\", \r\n    \"eventTime\": \"18:30\",\r\n    \"duration\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events/67ec12093ec361d2c0a20903",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"67ec12093ec361d2c0a20903"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwidXNlcklkIjoiNjdlYmU1MmRmNmU1YTk3MWMwNTMxYzU1IiwiaWF0IjoxNzQzNTEyODg1LCJleHAiOjE3NDM1OTkyODV9.9pgM5OrM13mlfRR5w87TATuUiKbSmJogZoFXLDjQ-WM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/events/67ebeb6d727f66887f6dceb2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"67ebeb6d727f66887f6dceb2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Venue",
+			"item": [
+				{
+					"name": "Get Venues",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/venues?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"venues"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Venue details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/venues/67ebdee4a65633323c0471fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"venues",
+								"67ebdee4a65633323c0471fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events at Venue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/venues/67ec0f883ec361d2c0a208ff/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"venues",
+								"67ec0f883ec361d2c0a208ff",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Venue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwidXNlcklkIjoiNjdlYmU1MmRmNmU1YTk3MWMwNTMxYzU1IiwiaWF0IjoxNzQzNTIzMTMyLCJleHAiOjE3NDM2MDk1MzJ9.HRQb2RgAR0QwD4TfBc7GmsKqjfprpfYnjAZP5XNSS18",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Best place to flex\", \r\n    \"address\":\"Maitama, Abuja\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/venues",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"venues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Venue Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwidXNlcklkIjoiNjdlYmU1MmRmNmU1YTk3MWMwNTMxYzU1IiwiaWF0IjoxNzQzNTIzMTMyLCJleHAiOjE3NDM2MDk1MzJ9.HRQb2RgAR0QwD4TfBc7GmsKqjfprpfYnjAZP5XNSS18",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"capacity\":10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/venues/67ec0f883ec361d2c0a208ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"venues",
+								"67ec0f883ec361d2c0a208ff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Get all bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/bookings?limit=10&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"bookings"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create booking request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwidXNlcklkIjoiNjdlYmU1MmRmNmU1YTk3MWMwNTMxYzU1IiwiaWF0IjoxNzQzNTIzMTMyLCJleHAiOjE3NDM2MDk1MzJ9.HRQb2RgAR0QwD4TfBc7GmsKqjfprpfYnjAZP5XNSS18",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventId\":\"67ec12093ec361d2c0a20903\", \r\n    \"artistId\":\"67ebbfd3324aba05bc0f58f3\",\r\n    \"performanceDate\":\"2025-04-01\", \r\n    \"performanceDuration\":30, \r\n    \"performanceTime\":\"18:30\"\r\n\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxMkBlbWFpbC5jb20iLCJ1c2VySWQiOiI2N2ViZTM0NDY3ZDAzMDNjMjAyOGUwYzEiLCJpYXQiOjE3NDM1NDYyNDgsImV4cCI6MTc0MzYzMjY0OH0.893LpW6jMW-7mClLeSdOa030CTdDubA-l_2Sy0fWrmE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"confirmed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/bookings/67ec5ffe246e1a46a4515932",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"bookings",
+								"67ec5ffe246e1a46a4515932"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/bookings/67ec5ffe246e1a46a4515932",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"bookings",
+								"67ec5ffe246e1a46a4515932"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
