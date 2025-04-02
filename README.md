@@ -44,7 +44,7 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
 ```json
     {
         "email":string,
-        "password":string, //greater than or equal 5 characters
+        "password":string "greater than or equal 5 characters"
     }
 ```
 **Response Body(no error):**
@@ -111,64 +111,14 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
     }
 ```
 
-
-# 3. Users
-<p>Get User Details</p>
-<ul>
-    <li>Protected Endpoint GET /api/users/me</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Get current user details</li>
-    <li>Response Body<p>
-  {
-    "email": string,
-    "name": string,
-    "role": string,
-    "createdAt": Date,
-    "updatedAt": Date,
-    "id": string
-}
-    </p></li>
-</ul>
-
-<p>Update User Details</p>
-<ul>
-    <li>Endpoint PATCH /api/users/me</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Update the current-user details</li>
-    <li>Request Body(all optional)<p>
-    {
-        "name":string,
-        "role":"artist" | "organizer" | "user",
-    }
-    </p></li>
-    <li>Response Body<p>
-    {
-        "message":string, 
-        "success":boolean
-    }
-    </p></li>
-</ul>
-
-<p>Delete User Account</p>
-<ul>    
-    <li>Endpoint DELETE /api/users/me</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Delete the current-user account</li>
-    <li>Response Body<p>
-    {
-        "message":string, 
-        "success":boolean
-    }
-    </p></li>
-</ul>
-
 # 4. Artists
-<p>Get Artists</p>
-<ul>
-    <li>Endpoint GET /api/artists</li>
-    <li>Query Params: limit, page</li>
-    <li>Fetch a limited amount of artists</li>
-    <li>Response Body<p>
+### Get Artists
+**Endpoint:** `GET /api/artists`  
+**Query Params:** `limit, page`  
+**Description:** Fetch a limited amount of artists 
+
+**Reponse Body:**
+```json
    {
         "stageName": string,
         "genres": string[],
@@ -180,14 +130,14 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
         "id": string, 
         "userId":string
     }[],
-    </p></li>
-</ul>
+```
 
-<p>Get Artist Profile</p>
-<ul>
-    <li>Endpoint GET /api/artists/:id</li>
-    <li>Fetch Artist Profile Details</li>
-    <li>Response Body<p>
+### Get Artist Profile
+**Endpoint:** `GET /api/artists/:id`  
+**Description:** Fetch Artist Profile Details
+
+**Reponse Body:**
+```json
    {
         "stageName": string,
         "genres": string[],
@@ -199,53 +149,54 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
         "id": string,
         "userId":string
     },
-    </p></li>
-</ul>
+```
 
-<p>Create Artist Profile</p>
-<ul>
-    <li>Endpoint POST /api/artists</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Create a New Artist Profile</li>
-    <li>Request Body<p>
+### Create Artist Profile
+**Endpoint:** `POST /api/artists`  
+**Headers:** Authorization: Bearer <token>  
+**Description:** Create a New Artist Profile
+**Genres:** Pop, Rock, Hip-Hop, R&B, Electronic, Jazz, Classical, Country, Reggae, Metal, Afrobeat, Other
+
+**Request Body:**
+```json
    {
         "stageName": string,
         "genres": string[],
         "bio": string,
         "priceTag": number,
-    },
-    <p>Possible genres include: Pop, Rock, Hip-Hop, R&B, Electronic, Jazz, Classical, Country, Reggae, Metal, Afrobeat, Other</p>
-    </p></li>
-    <li>Response Body<p>
+    }
+```
+**Reponse Body:**
+```json
     {
         "message": string,
         "success": boolean
-    },
-    </p></li>
-</ul>
+    }
+```
 
-<p>Update Artist Details</p>
-<ul>
-    <li>Endpoint PATCH /api/artists</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Update the current-artist details</li>
-    <li>Request Body(all optional)<p>
-  {
+### Update Artist Profile
+**Endpoint:** `PATCH /api/artists`  
+**Headers:** Authorization: Bearer <token>  
+**Description:** Update the current artist profile
+
+**Request Body(all optional):**
+```json
+   {
     "stageName":string,
     "genres":string[],
     "socialLinks":string[],
     "bio":string,
     "priceTag":number, 
     "rating":number
-} 
-    </p></li>
-    <li>Response Body<p>
-    {
-        "message":string, 
-        "success":boolean
     }
-    </p></li>
-</ul>
+```
+**Reponse Body:**
+```json
+    {
+        "message": string,
+        "success": boolean
+    }
+```
 
 
 # 5. Events
