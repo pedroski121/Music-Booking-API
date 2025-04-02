@@ -383,14 +383,14 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
     }
 ```
 
-
 # 7. Venue
-<p>Get Venues</p>
-<ul>
-    <li>Endpoint GET /api/venues</li>
-    <li>Query Params: limit, page</li>
-    <li>Fetch a limited amount of venues</li>
-    <li>Response Body<p>
+### Get Venues
+**Endpoint:** `GET /api/venues`  
+**Query Params:** `limit, page`  
+**Description:** Fetch a limited amount of venues
+
+**Reponse Body:**
+```json
     {
         "userId": string,
         "description": string,
@@ -400,15 +400,15 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
         "images": string[],
         "id": string
     }[]
-    </p></li>
-</ul>
+```
 
-<p>Get Venue Profile</p>
-<ul>
-    <li>Endpoint GET /api/venues/:id</li>
-    <li>Fetch Venue Details</li>
-    <li>Response Body<p>
-    {
+### Get Venue Profile
+**Endpoint:** `GET /api/venues/:id`  
+**Description:** Fetch Venue Details
+
+**Response Body:**
+```json
+     {
         "userId": string,
         "description": string,
         "address": string,
@@ -417,16 +417,15 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
         "images": string[],
         "id": string
     }
-    </p></li>
-</ul>
+```
 
-<p>Get Events at Venue</p>
-<ul>
-    <li>Endpoint GET /api/venues/:id/events</li>
-    <li>Fetch Events at a Venue </li>
-    <li>Response Body<p>
+### Get Events at Venue
+**Endpoint:** `GET /api/venues/:id/events`  
+**Description:** Fetch Events at a Venue
+
+**Response Body:**
+```json
     {
-
         "userId": string,
         "name": string,
         "description": string,
@@ -437,16 +436,16 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
         "eventTime": string,
         "id": string
     }[]
-    </p></li>
-</ul>
+```
 
-<p>Create Venue</p>
-<ul>
-    <li>Endpoint POST /api/venues</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Create a New Venue</li>
-    <li>Request Body<p>
-        {
+### Create Venue
+**Endpoint:** `POST /api/venues`  
+**Headers:** Authorization: Bearer `<token>`  
+**Description:** Create a New Venue
+
+**Request Body:**
+```json
+     {
             "id": string, 
             "userId":string,
             "description":string,
@@ -455,23 +454,23 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
             "capacity":number,  (optional)
             "images":string[] (optional)
         }
-    </p></li>
-    <li>Response Body<p>
+```
+**Reponse Body:**
+```json
     {
         "message": string,
         "success": boolean
-    },
-    </p></li>
-</ul>
+    }
+```
 
+### Update Venue Details
+**Endpoint:** `PATCH /api/venues/:id`  
+**Headers:** Authorization: Bearer `<token>`  
+**Description:** Update Venue Details
 
-<p>Update Venue Details</p>
-<ul>
-    <li>Endpoint PATCH /api/venues/:id</li>
-    <li>Headers: Authorization: Bearer <token></li>
-    <li>Update Venue Details</li>
-    <li>Request Body(all optional)<p>
-        {
+**Request Body(all optional):**
+```json
+      {
             "id": string, 
             "userId":string,
             "description":string,
@@ -480,11 +479,11 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
             "capacity":number,  (optional)
             "images":string[] (optional)
         } 
-    </p></li>
-    <li>Response Body<p>
+```
+**Reponse Body:**
+```json
     {
-        "message":string, 
-        "success":boolean
+        "message": string,
+        "success": boolean
     }
-    </p></li>
-</ul>
+```
