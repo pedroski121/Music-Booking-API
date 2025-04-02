@@ -1,3 +1,34 @@
+# Music Booking API
+
+## 1. Introduction
+
+The Music Booking API enables users to:
+- Browse artists and their profiles
+- Book live performances 
+- Create and manage event listings
+- Handle authentication and authorization
+- Perform CRUD operations on all resources
+
+## 2. Local Development Setup
+
+### Prerequisites
+- Node.js (v16+ recommended)
+- MongoDB Atlas account or local MongoDB instance
+- Git (optional)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/music-booking-api.git
+   cd music-booking-api
+2. Install necessary modules
+   ```bash
+   npm run install
+3. Spin up the development server
+   ```bash
+   npm run install
+4. Create a .env file. Add your MONGO_URI and JWT_SECRET to it
+
 # 1. Introduction 
 
 The Music Booking API enables users to browse artists, book performances, and manage event listings. The API supports authentication, authorization and CRUD operations.
