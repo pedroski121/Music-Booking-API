@@ -66,7 +66,7 @@ The Music Booking API enables users to:
 ```json
 {
     "email": string,
-    "userId": ObjectId,
+    "userId": string,
     "token": string
 }
 ```
