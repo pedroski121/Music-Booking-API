@@ -58,9 +58,10 @@ The Music Booking API enables users to:
 ```json
     {
         "email":string,
-        "password":string(greater than or equal to 5 characters)
+        "password":string
     }
 ```
+**Validation Rules:**Password must be 5+ characters long
 **Response Body(no error):**
 ```json
 {
