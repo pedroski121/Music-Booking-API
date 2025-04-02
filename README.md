@@ -386,7 +386,7 @@ The Music Booking API enables users to:
             "performanceDate":Date, YYYY-MM-DD(format), 
             "performanceDuration":number, 
             "performanceTime":string, HH/MM(24 hour format), 
-            "status": "requested" | "confirmed" | "rejected" | "completed"
+            "status": "requested | confirmed | rejected | completed"
         } 
 ```
 **Reponse Body:**
