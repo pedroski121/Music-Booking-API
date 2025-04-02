@@ -58,8 +58,7 @@ The Music Booking API enables users to:
 ```json
     {
         "email":string,
-        "password":string
-         // "password should not be greater than 5 characters"
+        "password":string(greater than or equal to 5 characters)
     }
 ```
 **Response Body(no error):**
@@ -402,7 +401,7 @@ The Music Booking API enables users to:
 ### Get Venues
 **Endpoint:** `GET /api/venues`  
 **Query Params:** `limit, page`  
-**Description:** Fetch a limited amount of venues
+**Description:** Fetch a limited amount of event venue location
 
 **Reponse Body:**
 ```json
