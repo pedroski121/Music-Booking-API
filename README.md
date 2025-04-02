@@ -20,15 +20,16 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
 <ul>
     <li>Endpoint POST /api/auth/register</li>
     <li>Create a new user account</li>
-    <li>Request Body<p>
-    {
+    **Request Body:**
+    ```json
         "name":string,
         "email":string,
         "password":string,
         "role":"artist" | "organizer" | "user"
     }
     </p></li>
-    <li>Response Body<p>
+    **Response Body:**
+    ```json
     {
         "message":string, 
         "success":boolean
