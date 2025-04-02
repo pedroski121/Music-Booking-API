@@ -26,7 +26,7 @@ The Music Booking API enables users to:
    npm run install
 3. Spin up the development server
    ```bash
-   npm run install
+   npm run dev
 4. Create a .env file. Add your MONGO_URI and JWT_SECRET to it
 
 # 2. Authentication
