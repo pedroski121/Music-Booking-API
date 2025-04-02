@@ -40,7 +40,7 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
 **Endpoint:** `POST /api/auth/login`  
 **Description:** Log User In 
 
-**Request Body(error):**
+**Request Body:**
 ```json
     {
         "email":string,
@@ -55,6 +55,63 @@ The API uses JWT for authentication. Include the Authorization: Bearer <token> h
     "token": string
 }
 ```
+**Response Body(error):**
+```json
+    {
+        "message":string, 
+        "success":boolean
+    }
+```
+
+
+# 2. Users
+### Get User Details
+**Protected Endpoint:** `GET /api/users/me` 
+**Headers:** Authorization: Bearer <token>
+**Description:** Get current user details 
+
+**Response Body:**
+```json
+  {
+    "email": string,
+    "name": string,
+    "role": string,
+    "createdAt": Date,
+    "updatedAt": Date,
+    "id": string
+}
+```
+### Update User Details
+**Endpoint:** `PATCH /api/users/me` 
+**Headers:** Authorization: Bearer <token>
+**Description:** Update the current user details
+**Request Body(all optional)**
+```json
+   {
+        "name":string,
+        "role":"artist" | "organizer" | "user",
+    }
+```
+**Response Body**
+```json
+    {
+        "message":string, 
+        "success":boolean
+    }
+```
+### Delete User Account
+**Endpoint:** `DELETE /api/users/me` 
+**Headers:** Authorization: Bearer <token>
+**Description:** Delete the current user account
+**Response Body**
+```json
+    {
+        "message":string, 
+        "success":boolean
+    }
+```
+
+
 # 3. Users
 <p>Get User Details</p>
 <ul>
